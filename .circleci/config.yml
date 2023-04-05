@@ -47,6 +47,9 @@ jobs:
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build
+      - run:
+          name: Debug
+          command: echo $SLACK_DEFAULT_CHANNEL
       - notify_on_failure
 
   test-frontend:
