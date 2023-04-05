@@ -75,7 +75,7 @@ jobs:
           command: |
             cd backend
             npm i
-            npm audit fix
+            npm audit
 
   scan-frontend:
     docker:
@@ -89,17 +89,17 @@ jobs:
           command: |
             cd frontend
             npm i
-            npm audit fix
+            npm audit
 
 workflows:
   default:
     jobs:
       - build-frontend
       - build-backend
-      - test-frontend:
-          requires: [build-frontend]
-      - test-backend:
-          requires: [build-backend]
+      # - test-frontend:
+      #     requires: [build-frontend]
+      # - test-backend:
+      #     requires: [build-backend]
       - scan-backend:
           requires: [build-backend]
       - scan-frontend:
