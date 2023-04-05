@@ -73,17 +73,18 @@ jobs:
             cd backend
             npm audit fix
 
-  # scan-frontend:
-  #   docker:
-  #     - image: circleci/node:13.8.0
-  #   steps:
-  #     - checkout
-  #     - restore_cache:
-  #         keys: [frontend-build]
-  #     - run:
-  #         name: Scan front-end
-  #         command: |
-  #           npm audit
+  scan-frontend:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys: [frontend-build]
+      - run:
+          name: Scan front-end
+          command: |
+            cd frontend
+            npm audit
 
 workflows:
   default:
