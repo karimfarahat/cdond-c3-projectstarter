@@ -70,7 +70,8 @@ jobs:
       - run:
           name: Scan Back-end
           command: |
-            npm audit
+            cd backend
+            npm audit fix
 
   # scan-frontend:
   #   docker:
