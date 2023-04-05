@@ -7,8 +7,8 @@ jobs:
     # working_directory: ~/project/.circleci/ansible/inventory.txt
     steps:
       - checkout
-      - restore_cache:
-          keys: [frontend-build]
+      # - restore_cache:
+      #     keys: [frontend-build]
       - run:
           name: Build front-end
           command: |
