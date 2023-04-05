@@ -13,6 +13,7 @@ jobs:
           name: Build front-end
           command: |
             cd frontend
+            npm i
             npm run build:prod
       - save_cache:
           paths: [frontend/node_modules]
