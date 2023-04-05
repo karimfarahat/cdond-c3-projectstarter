@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  slack: circleci/slack@4.12.1
+  slack: circleci/slack@4.10.1
 
 commands:
   notify_on_failure:
@@ -47,10 +47,6 @@ jobs:
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build
-      - run:
-          name: Debug
-          command: echo $SLACK_DEFAULT_CHANNEL
-          when: on_fail
       - notify_on_failure
 
   test-frontend:
