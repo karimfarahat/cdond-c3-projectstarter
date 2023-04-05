@@ -84,7 +84,7 @@ jobs:
           name: Scan front-end
           command: |
             cd frontend
-            npm audit
+            npm audit fix
 
 workflows:
   default:
