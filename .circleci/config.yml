@@ -70,8 +70,19 @@ jobs:
       - run:
           name: Scan Back-end
           command: |
-            exit 0
             npm audit
+
+  # scan-frontend:
+  #   docker:
+  #     - image: circleci/node:13.8.0
+  #   steps:
+  #     - checkout
+  #     - restore_cache:
+  #         keys: [frontend-build]
+  #     - run:
+  #         name: Scan front-end
+  #         command: |
+  #           npm audit
 
 workflows:
   default:
