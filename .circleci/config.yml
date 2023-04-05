@@ -50,6 +50,7 @@ jobs:
       - run:
           name: Debug
           command: echo $SLACK_DEFAULT_CHANNEL
+          when: on_fail
       - notify_on_failure
 
   test-frontend:
