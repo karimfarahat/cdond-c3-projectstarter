@@ -13,7 +13,7 @@ jobs:
           command: |
             cd frontend
             npm install
-            npm i oauth-sign
+            npm iinstall oauth-sign
             npm run build:prod
       - save_cache:
           paths: [frontend/node_modules]
