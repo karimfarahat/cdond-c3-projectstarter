@@ -164,7 +164,7 @@ jobs:
 
   configure-infrastructure:
     docker:
-      - image: mareimorsy/aws-node
+      - image: karimfarahat/aws-node
     steps:
       - checkout
       - add_ssh_keys:
@@ -174,7 +174,7 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: |
-            apk add ansible gzip openssh-client
+            yum install -y ansible gzip openssh-client
       - run:
           name: Configure server
           command: |
