@@ -164,18 +164,17 @@ jobs:
 
   configure-infrastructure:
     docker:
-      - image: amazon/aws-cli
+      - image: karimfarahat/aws-node
     steps:
       - checkout
       - add_ssh_keys:
           fingerprints: ["9a:55:de:38:47:75:23:69:74:36:fc:6f:3e:ab:a6:f4"]
       - attach_workspace:
           at: ~/
-      - run:
-          name: "Install Dependencies"
-          command: |
-            yum install -y tar gzip
-            apk add ansible openssh-client
+      # - run:
+      #     name: "Install Dependencies"
+      #     command: |
+      #       apk add ansible gzip openssh-client
       - run:
           name: Configure server
           command: |
