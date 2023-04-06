@@ -8,7 +8,7 @@ commands:
     steps:
       - slack/notify:
           event: fail
-          channel: C051V5B4H3Q
+          channel: $SLACK_DEFAULT_CHANNEL
           template: basic_fail_1
 
 jobs:
