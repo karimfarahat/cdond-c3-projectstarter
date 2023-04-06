@@ -174,7 +174,7 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: |
-            apk add ansible gzip openssh-client
+            apk add ansible gzip openssh-client tar
       - run:
           name: Configure server
           command: |
