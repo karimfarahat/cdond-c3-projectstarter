@@ -241,9 +241,8 @@ jobs:
             echo "API_URL=http://$BACKEND_IP:3030" > .env
             npm install
             npm run build
-      - run:
-          name: Deploy frontend objects
-          command: |
+
+            # Deploy frontend objects
             aws s3 cp dist s3://udapeople-${CIRCLE_WORKFLOW_ID:0:7} --recursive
 
       # Here's where you will add some code to rollback on failure
