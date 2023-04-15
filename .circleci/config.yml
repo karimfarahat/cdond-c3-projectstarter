@@ -287,7 +287,7 @@ jobs:
 
   smoke-test:
     docker:
-      - image: amazon/aws-cli
+      - image: karimfarahat/aws-node
     steps:
       - checkout
       - run:
