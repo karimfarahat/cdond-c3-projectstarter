@@ -216,9 +216,9 @@ jobs:
             # export TYPEORM_HOST=$(aws ec2 describe-instances --region us-east-1 --filters "Name=tag:project,Values=udapeople" --query 'Reservations[*].Instances[*].PublicIpAddress' --output text)
             echo $TYPEORM_HOST
             cd backend
-            export  TYPEORM_MIGRATIONS_DIR=./src/migrations
-            export  TYPEORM_ENTITIES=./src/modules/domain/*/.entity.ts
-            export  TYPEORM_MIGRATIONS=./src/migrations/*.ts
+            # export  TYPEORM_MIGRATIONS_DIR=./src/migrations
+            # export  TYPEORM_ENTITIES=./src/modules/domain/*/.entity.ts
+            # export  TYPEORM_MIGRATIONS=./src/migrations/*.ts
             npm i
             npm run premigrations
             npm run migrations > migrations_dump.txt
@@ -232,6 +232,8 @@ jobs:
               # If you are using kvdb.io, generate the bucket ID in your local terminal first
               curl --insecure https://kvdb.io/2FEKtxgt2Te2Jvw4pdRSqp/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
               fi
+      - destroy_environment
+      - revert-migrations
   deploy-frontend:
     docker:
       - image: karimfarahat/aws-node
