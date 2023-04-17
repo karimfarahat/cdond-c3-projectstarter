@@ -303,9 +303,9 @@ jobs:
           command: |
             export BACKEND_PUBLIC_IP=$(aws ec2 describe-instances --region us-east-1 --filters "Name=tag:project,Values=udapeople" --query 'Reservations[*].Instances[*].PublicIpAddress' --output text)
             
-            # URL="http://$BACKEND_PUBLIC_IP:3030/api/status"
+            URL="http://$BACKEND_PUBLIC_IP:3030/api/status"
             # echo $URL
-            URL="http://g00dkuhdogle.com"
+            # URL="http://g00dkuhdogle.com"
             if curl -s --head ${URL}
             then
               echo "It works!!!"
