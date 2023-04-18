@@ -209,6 +209,8 @@ jobs:
       - image: karimfarahat/aws-node
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/ 
       - run:
       # run migrations
           name: Run migrations
@@ -239,6 +241,8 @@ jobs:
       - image: karimfarahat/aws-node
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/ 
       - run:
           name: Deploy Frontend
           command: |
@@ -262,6 +266,8 @@ jobs:
       - image: karimfarahat/aws-node
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/ 
       - add_ssh_keys:
           fingerprints: ["9a:55:de:38:47:75:23:69:74:36:fc:6f:3e:ab:a6:f4"]
       - run:
@@ -298,6 +304,8 @@ jobs:
       - image: karimfarahat/aws-node
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/ 
       - run:
           name: Backend smoke test.
           command: |
@@ -324,6 +332,8 @@ jobs:
       - image: karimfarahat/aws-node
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/ 
       - run:
           name: Save Old Workflow ID to kvdb.io
           command: |
@@ -345,6 +355,8 @@ jobs:
       - image: karimfarahat/aws-node
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/ 
       - run:
           name: Remove old stacks and files
           command: |
